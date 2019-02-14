@@ -57,6 +57,7 @@
   </head>
   <body>
     <!-- Name, Year, mobile no, email, Tech, willing to join, seasion feeadback, Any query -->
+   
 
     <div class="container-contact100">
       <div
@@ -69,7 +70,7 @@
         data-draggable="1"
       ></div>
 
-      <button class="contact100-btn-show">
+      <button class="contact100-btn-show" >
         <i class="fa fa-envelope-o" aria-hidden="true"></i>
       </button>
 
@@ -78,17 +79,17 @@
           <i class="fa fa-close" aria-hidden="true"></i>
         </button>
 
+        <span class="contact100-form-title">
+          Feedback Form
+        </span>
+
         <form
-          class="contact100-form validate-form"
-		  method="POST"
-		  id="gform"
-		  data-email="osd@jecrc.ac.in"
+          class="contact100-form"
+          method="POST"
+          id="gform"
           action="https://script.google.com/a/jecrc.ac.in/macros/s/AKfycbxfijo0CDz9hio3zLicV-E0W1O4uCWZq7ZRZsvH/exec"
-          
         >
-          <span class="contact100-form-title">
-            Feedback Form
-          </span>
+          
 
           <div
             class="wrap-input100 rs1-wrap-input100 validate-input"
@@ -100,6 +101,7 @@
               type="text"
               name="name"
               placeholder="Enter your name"
+              required
             />
             <span class="focus-input100"></span>
           </div>
@@ -116,6 +118,7 @@
               placeholder="Enter your current year"
               min="1"
               max="4"
+              required
             />
             <span class="focus-input100"></span>
           </div>
@@ -130,6 +133,7 @@
               type="text"
               name="email"
               placeholder="Enter your email addess"
+              required
             />
             <span class="focus-input100"></span>
           </div>
@@ -145,6 +149,7 @@
               placeholder="Enter your mobile number"
               min="5555555555"
               max="9999999999"
+              required
             />
             <span class="focus-input100"></span>
           </div>
@@ -160,7 +165,8 @@
               class="input100"
               type="text"
               name="techs"
-              placeholder="Enter technolgies in which you are interseted"
+              placeholder="Enter technolgies"
+              required
             />
             <span class="focus-input100"></span>
           </div>
@@ -173,7 +179,7 @@
             <input type="radio" name="interested" value="yes" required /> Want
             to learn <br />
             <input type="radio" name="interested" value="no" required /> I want
-            to same as before
+            to be same as before
             <span class="focus-input100"></span>
           </div>
 
@@ -186,6 +192,7 @@
               class="input100"
               name="feedback"
               placeholder="Your message here..."
+              required
             ></textarea>
             <span class="focus-input100"></span>
           </div>
@@ -199,8 +206,13 @@
               class="input100"
               name="query"
               placeholder="Your message here..."
+              required
             ></textarea>
             <span class="focus-input100"></span>
+          </div>
+
+          <div class="input100 thankyou_message" style="display: none" id="thankyou_message">
+            Thank You for your feedback
           </div>
 
           <div class="container-contact100-form-btn">
@@ -213,9 +225,7 @@
           </div>
         </form>
 
-        <div style="display: none" id="thankyou_message">
-          Thank You for your feedback
-        </div>
+        
         <span class="contact100-more">
           For any question contact us:
           <span class="contact100-more-highlight">osd@jecrc.ac.in</span>
@@ -223,13 +233,7 @@
       </div>
     </div>
 
-	<div id="dropDownSelect1"></div>
-	
-	<script
-      data-cfasync="false"
-      type="text/javascript"
-      src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"
-    ></script>
+    <div id="dropDownSelect1"></div>
 
     <!--===============================================================================================-->
     <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -249,14 +253,20 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoOGAHeCLArOTIUtGEqMt6WocZksoBvFg"></script>
     <script src="js/map-custom.js"></script>
     <!--===============================================================================================-->
-    <script src="js/main.js"></script>
+    <script src="./js/main.js"></script>
+
+    <script
+    data-cfasync="false"
+    type="text/javascript"
+    src="./js/form-handler.js"
+  ></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"
     ></script>
-    
+
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
